@@ -1,0 +1,23 @@
+function rot13(str) {
+  /* Caesars Cipher Shifts Alpha Numberic Characters
+  by 13 places and return the decoded string*/
+  let finalString = "";
+  for (let i = 0; i < str.length; i++) {
+    var regex = /[A-Z]/;
+    if (regex.test(str[i])) {
+      let char = str[i];
+      let code = char.charCodeAt();
+      let final = code % 26;
+      final += 65;
+      let newChar = String.fromCharCode(final);
+      finalString += newChar;
+    } else {
+      finalString += str[i];
+    }
+  }
+  console.log(finalString);
+  return finalString;
+}
+
+// returns fre code camp
+rot13("SERR PBQR PNZC!");
